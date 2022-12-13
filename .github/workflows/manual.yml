@@ -17,10 +17,20 @@ jobs:
             with:
                 python-version: '3.10' 
               
-          - name: Setup Repo
+          - name: Clone Repo & Build
             run: |
               git clone https://github.com/xjunko/osr2png -b rewrite osr2png
               python3.10 -m pip install -r osr2png/requirements.txt
               cd osr2png
               python3.10 build.py
-              ls
+              
+          - name: Finish building, zipping.
+            run: |
+              mkdir Release
+              mv dist/osr2png Release
+              
+          - name: Upload
+            uses: actions/upload-artifact@v2
+            with:
+              name: linux_x64
+              path: Release
