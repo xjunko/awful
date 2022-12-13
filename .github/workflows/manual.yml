@@ -1,0 +1,27 @@
+name: Build Test
+
+on:
+  workflow_dispatch
+  
+  
+jobs:
+  build-unix:
+      strategy:
+          matrix:
+              os: ["ubuntu-latest"]
+              
+      runs-on: ${{ matrix.os }}
+      
+      steps:
+        - name: Python
+        - uses: actions/checkout@v3
+        - uses: actions/setup-python@v4
+          with:
+              python-version: '3.10' 
+              
+        - name: Setup Repo
+          run: |
+            git clone https://github.com/xjunko/osr2png -b rewrite osr2png
+            python3.10 -m pip install -r osr2png/requirements.txt
+            cd osr2png
+            python3.10 build.py
