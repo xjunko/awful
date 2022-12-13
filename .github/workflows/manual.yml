@@ -17,9 +17,10 @@ jobs:
             with:
                 python-version: '3.10' 
                 
-          - name: Install Tools
+          - name: Install Dependecies
             run: |
               sudo apt-get install --quiet -y tree
+              sudo apt-get install --quiet -y libfreetype6-dev libxau-dev libwebp-dev libpng16-16 liblzma-dev libjpeg-dev libbrotli-dev
               
           - name: Clone Repo & Build
             run: |
