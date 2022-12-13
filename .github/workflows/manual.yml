@@ -20,9 +20,9 @@ jobs:
           - name: Clone Repo & Build
             run: |
               git clone https://github.com/xjunko/osr2png -b rewrite osr2png
-              python3.10 -m pip install -r osr2png/requirements.txt
+              python -m pip install -r osr2png/requirements.txt
               cd osr2png
-              python3.10 build.py
+              python build.py
               
           - name: Finish building, zipping.
             run: |
