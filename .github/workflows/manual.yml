@@ -33,7 +33,6 @@ jobs:
               tree
               mkdir Release
               mv osr2png/dist/osr2png Release
-              mv dist/osr2png Release
               
           - name: Upload
             uses: actions/upload-artifact@v2
