@@ -28,7 +28,7 @@ jobs:
             run: |
               tree /F
               mkdir Release
-              move osr2png/build/osr2png.exe Release
+              move osr2png/dist/osr2png.exe Release
               
           - name: Upload
             uses: actions/upload-artifact@v2
