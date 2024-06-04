@@ -20,7 +20,7 @@ jobs:
           kernel-branch: melt-rebase
           vendor-url: https://github.com/crdroidandroid/proprietary_vendor_xiaomi_marble
           vendor-dir: marble-vendor
-          vendor-branch: 14.0
+          vendor-branch: "14.0"
           config: marble_defconfig
           arch: arm64
           aosp-gcc: true
