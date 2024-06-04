@@ -1,0 +1,31 @@
+name: Build Kernel
+on:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  Build-Kernel:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - name: Build Kernel
+      uses: dabao1955/kernel_build_action@main
+      with:
+          kernel-url: https://github.com/Pzqqt/android_kernel_xiaomi_marble
+          kernel-dir: melt-marble
+          kernel-branch: melt-rebase
+          config: marble_defconfig
+          arch: arm64
+          aosp-gcc: true
+          aosp-clang: true
+          ksu: true
+          ksu-version: main
+          android-version: 14
+          aosp-clang-version: r487747c
+          python-27: true
+          disable-lto: true
+          anykernel3: true
