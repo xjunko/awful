@@ -67,7 +67,7 @@ jobs:
               mv osr2png/dist/osr2png Release
               
           - name: Upload
-            uses: actions/upload-artifact@v2
+            uses: actions/upload-artifact@v4
             with:
               name: linux_x64
               path: Release
